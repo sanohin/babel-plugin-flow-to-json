@@ -1,0 +1,63 @@
+{
+  "name": "babel-plugin-flow-to-json",
+  "version": "1.0.1",
+  "description": "Transforms flow types to JSON schema",
+  "keywords": [
+    "babel",
+    "babel-plugin",
+    "flow",
+    "flowtype",
+    "json",
+    "json-schema",
+    "type"
+  ],
+  "license": "MIT",
+  "author": "Oleksandr Anokhin <sasankhin124@gmail.com>",
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/sanohin/babel-plugin-flow-to-json"
+  },
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "babel src/ --out-dir lib/",
+    "clean": "rimraf lib",
+    "precommit": "npm test && lint-staged",
+    "prepublish": "npm run build && npm test",
+    "test": "jest"
+  },
+  "dependencies": {
+    "babel-types": "^6.26.0"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "husky": "^0.14.3",
+    "jest": "^22.2.2",
+    "lint-staged": "^6.1.0",
+    "prettier": "^1.10.2",
+    "rimraf": "^2.6.2"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>/__tests__/code"
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "eslint --fix",
+      "prettier --single-quote true --write",
+      "git add"
+    ]
+  }
+}

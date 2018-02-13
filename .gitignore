@@ -1,0 +1,13 @@
+node_modules/
+lib/
+
+.vscode/
+.idea
+*.sublime-workspace
+
+debug.log
+lerna-debug.log
+npm-debug.log
+
+.DS_Store
+sample/

@@ -1,0 +1,350 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`object-array.js 1`] = `
+"\\"use strict\\";
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\\"Cannot call a class as a function\\"); } }
+
+var Bar = function Bar() {
+    _classCallCheck(this, Bar);
+};
+
+Bar.prop = {
+    type: \\"object\\",
+    properties: {
+        baz: {
+            type: \\"array\\",
+            items: {
+                type: \\"object\\",
+                properties: {
+                    foo: {
+                        type: \\"string\\"
+                    },
+                    bar: {
+                        type: \\"number\\"
+                    }
+                },
+                required: [\\"foo\\", \\"bar\\"]
+            }
+        },
+        qux: {
+            type: \\"object\\",
+            properties: {
+                foo: {
+                    type: \\"string\\"
+                },
+                bar: {
+                    type: \\"number\\"
+                }
+            },
+            required: [\\"foo\\", \\"bar\\"]
+        },
+        quux: {
+            type: \\"array\\",
+            items: {
+                type: \\"object\\",
+                properties: {
+                    foo: {
+                        type: \\"string\\"
+                    },
+                    bar: {
+                        type: \\"number\\"
+                    }
+                },
+                required: [\\"foo\\", \\"bar\\"]
+            }
+        },
+        foo: {
+            type: \\"object\\",
+            properties: {
+                bar: {
+                    type: \\"array\\",
+                    items: {
+                        type: \\"object\\",
+                        properties: {
+                            foo: {
+                                type: \\"string\\"
+                            },
+                            bar: {
+                                type: \\"number\\"
+                            }
+                        },
+                        required: [\\"foo\\", \\"bar\\"]
+                    }
+                }
+            },
+            required: [\\"bar\\"]
+        }
+    },
+    required: [\\"baz\\", \\"qux\\", \\"quux\\", \\"foo\\"]
+};"
+`;
+
+exports[`opaque.js 1`] = `
+"\\"use strict\\";
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\\"Cannot call a class as a function\\"); } }
+
+var Foo = function Foo() {
+    _classCallCheck(this, Foo);
+};
+
+Foo.props = {
+    type: \\"object\\",
+    properties: {
+        id1: {
+            type: \\"number\\"
+        },
+        id2: {
+            type: \\"number\\"
+        }
+    },
+    required: [\\"id1\\", \\"id2\\"]
+};"
+`;
+
+exports[`optional-objects.js 1`] = `
+"\\"use strict\\";
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\\"Cannot call a class as a function\\"); } }
+
+var Bar = function Bar() {
+    _classCallCheck(this, Bar);
+};
+
+Bar.prop = {
+    type: \\"object\\",
+    properties: {
+        bar: {
+            anyOf: [{
+                type: \\"null\\"
+            }, {
+                type: \\"object\\",
+                properties: {
+                    foo: {
+                        type: \\"string\\"
+                    }
+                },
+                required: [\\"foo\\"]
+            }]
+        },
+        baz: {
+            anyOf: [{
+                type: \\"null\\"
+            }, {
+                type: \\"array\\",
+                items: {
+                    type: \\"string\\"
+                }
+            }]
+        },
+        qux: {
+            anyOf: [{
+                type: \\"null\\"
+            }, {
+                type: \\"object\\",
+                properties: {
+                    foo: {
+                        type: \\"string\\"
+                    },
+                    bar: {
+                        type: \\"number\\"
+                    }
+                },
+                required: [\\"foo\\", \\"bar\\"]
+            }]
+        },
+        quux: {
+            type: \\"object\\",
+            properties: {
+                foo: {
+                    type: \\"number\\"
+                }
+            },
+            required: [\\"foo\\"]
+        }
+    },
+    required: [\\"bar\\", \\"baz\\", \\"qux\\", \\"quux\\"]
+};"
+`;
+
+exports[`optional-primitives.js 1`] = `
+"\\"use strict\\";
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\\"Cannot call a class as a function\\"); } }
+
+var Bar = function Bar() {
+    _classCallCheck(this, Bar);
+};
+
+Bar.prop = {
+    type: \\"object\\",
+    properties: {
+        bar: {
+            anyOf: [{
+                type: \\"null\\"
+            }, {
+                type: \\"string\\"
+            }]
+        },
+        baz: {
+            anyOf: [{
+                type: \\"null\\"
+            }, {
+                type: \\"number\\"
+            }]
+        },
+        qux: {
+            anyOf: [{
+                type: \\"null\\"
+            }, {
+                type: \\"boolean\\"
+            }]
+        }
+    },
+    required: [\\"bar\\", \\"baz\\", \\"qux\\"]
+};"
+`;
+
+exports[`primitives.js 1`] = `
+"\\"use strict\\";
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\\"Cannot call a class as a function\\"); } }
+
+var Foo = function Foo() {
+    _classCallCheck(this, Foo);
+};
+
+Foo.testPrimitives = {
+    type: \\"object\\",
+    properties: {
+        a: {
+            type: \\"number\\"
+        },
+        b: {
+            type: \\"string\\"
+        },
+        c: {
+            type: \\"boolean\\"
+        }
+    },
+    required: [\\"a\\", \\"b\\", \\"c\\"]
+};"
+`;
+
+exports[`simple-union.js 1`] = `
+"\\"use strict\\";
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\\"Cannot call a class as a function\\"); } }
+
+var Bar = function Bar() {
+    _classCallCheck(this, Bar);
+};
+
+Bar.prop = {
+    anyOf: [{
+        type: \\"string\\"
+    }, {
+        type: \\"object\\",
+        properties: {
+            foo: {
+                type: \\"string\\"
+            },
+            bar: {
+                type: \\"number\\"
+            }
+        },
+        required: [\\"foo\\", \\"bar\\"]
+    }, {
+        type: \\"null\\"
+    }]
+};"
+`;
+
+exports[`type-alias.js 1`] = `
+"\\"use strict\\";
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\\"Cannot call a class as a function\\"); } }
+
+var Foo = function Foo() {
+    _classCallCheck(this, Foo);
+};
+
+Foo.baz = {
+    type: \\"object\\",
+    properties: {
+        foo: {
+            type: \\"string\\"
+        }
+    },
+    required: [\\"foo\\"]
+};
+Foo.bar = {
+    type: \\"array\\",
+    items: {
+        type: \\"number\\"
+    }
+};"
+`;
+
+exports[`typeof.js 1`] = `
+"'use strict';
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\\"Cannot call a class as a function\\"); } }
+
+var user = {
+    id: 'some id',
+    name: 'some name'
+};
+
+var Foo = function Foo() {
+    _classCallCheck(this, Foo);
+};
+
+Foo.prop = {
+    type: 'object',
+    properties: {
+        user: {
+            type: 'object',
+            properties: {
+                id: {
+                    type: 'string'
+                },
+                name: {
+                    type: 'string'
+                }
+            },
+            required: ['id', 'name']
+        }
+    },
+    required: ['user']
+};"
+`;
+
+exports[`union-with-enums.js 1`] = `
+"'use strict';
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\\"Cannot call a class as a function\\"); } }
+
+var Bar = function Bar() {
+    _classCallCheck(this, Bar);
+};
+
+Bar.prop = {
+    enum: ['someStr', 46],
+    anyOf: [{
+        type: 'object',
+        properties: {
+            foo: {
+                type: 'string'
+            },
+            bar: {
+                type: 'number'
+            }
+        },
+        required: ['foo', 'bar']
+    }, {
+        type: 'null'
+    }]
+};"
+`;
